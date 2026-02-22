@@ -1,3 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --color-sage: #84B59F;
+  --color-dark-green: #1a3a2a;
+  --color-lavender: #9B8EC4;
+  --color-accent-mint: #C8E6D4;
+  --color-overlay: #1A2E25;
+}
+
 /* Reset & base */
 *, *::before, *::after {
   margin: 0;
@@ -15,21 +27,23 @@ html {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
 }
 
-/* Colour variables */
+/* Colour variables (for non-Tailwind CSS) */
 :root {
   --color-sage: #84B59F;
   --color-dark-green: #1a3a2a;
   --color-lavender: #9B8EC4;
+  --color-accent-mint: #C8E6D4;
+  --color-overlay: #1A2E25;
 }
 
 #root {
@@ -50,12 +64,20 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
 }
 
+.screen-layout--safe {
+  background-position: center 35%;
+}
+
 .screen-layout-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
   pointer-events: none;
   z-index: 0;
+}
+
+.screen-layout--safe .screen-layout-overlay {
+  background: rgba(26, 46, 37, 0.62);
 }
 
 .screen-layout .navbar {
@@ -80,12 +102,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .screen-placeholder {
   color: rgba(255, 255, 255, 0.9);
-  font-family: Georgia, serif;
+  font-family: var(--font-heading);
   font-size: 1.5rem;
 }
 
 /* ----- Navbar ----- */
 .navbar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -95,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-logo {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 600;
   color: white;
@@ -119,6 +142,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.95rem;
   padding-bottom: 0.25rem;
   border-bottom: 2px solid transparent;
+  font-family: var(--font-body);
 }
 
 .navbar-links a:hover {
@@ -151,6 +175,50 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.navbar-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .navbar-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-dark-green);
+    padding: 0.75rem 1.5rem 1.25rem;
+    gap: 0.75rem;
+    z-index: 10;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+}
+
 /* ----- Footer ----- */
 .footer {
   display: flex;
@@ -162,11 +230,23 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(0, 0, 0, 0.4);
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-body);
 }
 
 .footer-left {
   flex: 1;
   min-width: 0;
+}
+
+.footer-crisis-link {
+  color: var(--color-sage);
+  font-size: 6.5pt;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.footer-crisis-link:hover {
+  text-decoration: underline;
 }
 
 .footer-right {
@@ -181,10 +261,51 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-screen-name {
-  font-family: Georgia, serif;
+  font-family: var(--font-heading);
 }
 
 .footer-credit {
   opacity: 0.8;
   font-size: 0.7rem;
+}
+
+/* ----- Safe screen ----- */
+.safe-heading {
+  font-size: 42pt;
+}
+
+.safe-subcopy {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.safe-button-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.safe-card {
+  min-width: 200px;
+  max-width: 280px;
+}
+
+@media (max-width: 640px) {
+  .safe-heading {
+    font-size: 30pt;
+  }
+
+  .safe-subcopy {
+    font-size: 13pt;
+  }
+
+  .safe-button-row {
+    justify-content: center;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .safe-card {
+    min-width: min(80vw, 340px);
+    max-width: 90vw;
+  }
 }

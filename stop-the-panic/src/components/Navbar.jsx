@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 const INTERVENTION_PATHS = ['/safe', '/look', '/listen', '/link', '/breathe-intro', '/breathe-orb', '/ground', '/body-scan', '/visualise', '/act', '/cbt', '/affirmations', '/god-menu', '/patterns', '/tetris'];
 
 export default function Navbar() {
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
   const isInterventionsActive = INTERVENTION_PATHS.some((path) => location.pathname === path || location.pathname.startsWith(path + '/'));
 
   return (
@@ -11,7 +13,7 @@ export default function Navbar() {
       <NavLink to="/" className="navbar-logo" end>
         Stop the Panic
       </NavLink>
-      <div className="navbar-links">
+      <div className={`navbar-links${menuOpen ? ' open' : ''}`}>
         <NavLink to="/safe" className={isInterventionsActive ? 'active' : ''}>
           Interventions
         </NavLink>
@@ -25,9 +27,20 @@ export default function Navbar() {
           Donate
         </NavLink>
       </div>
-      <button type="button" className="navbar-music" aria-label="Toggle music">
-        <span className="navbar-music-icon" aria-hidden>♪</span>
-      </button>
+      <div className="navbar-actions">
+        <button
+          type="button"
+          className="navbar-hamburger"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((o) => !o)}
+        >
+          ☰
+        </button>
+        <button type="button" className="navbar-music" aria-label="Toggle music">
+          <span className="navbar-music-icon" aria-hidden>♪</span>
+        </button>
+      </div>
     </nav>
   );
 }
