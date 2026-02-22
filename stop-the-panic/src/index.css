@@ -108,12 +108,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ----- Navbar ----- */
 .navbar {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-dark-green);
+}
+
+.navbar-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1.5rem;
-  background-color: var(--color-dark-green);
   gap: 1rem;
 }
 
@@ -193,6 +197,37 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
+/* Mobile dropdown — rendered in normal flow, pushes content down */
+.navbar-mobile-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #2C4A3E;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.navbar-mobile-menu a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+.navbar-mobile-menu a:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.navbar-mobile-menu a.active {
+  color: var(--color-sage);
+}
+
 @media (max-width: 640px) {
   .navbar-hamburger {
     display: flex;
@@ -202,20 +237,6 @@ h1, h2, h3, h4, h5, h6 {
 
   .navbar-links {
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: var(--color-dark-green);
-    padding: 0.75rem 1.5rem 1.25rem;
-    gap: 0.75rem;
-    z-index: 10;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .navbar-links.open {
-    display: flex;
   }
 }
 
