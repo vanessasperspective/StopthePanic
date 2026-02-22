@@ -8,10 +8,11 @@ export default function ScreenLayout({
   totalScreens,
   screenName,
   photoCredit,
+  layoutClassName,
 }) {
   return (
     <div
-      className="screen-layout"
+      className={['screen-layout', layoutClassName].filter(Boolean).join(' ')}
       style={backgroundImage ? { '--screen-bg-image': `url(${backgroundImage})` } : undefined}
     >
       <div className="screen-layout-overlay" />
