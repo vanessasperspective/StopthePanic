@@ -43,6 +43,7 @@ export const screenConfig = {
     photoCredit: 'Florian Schindler / Unsplash',
     screenNumber: 5,
     totalScreens: TOTAL_SCREENS,
+    layoutClassName: 'screen-layout--link',
   },
   breatheIntro: {
     backgroundImage: daniilSilantev,
@@ -50,6 +51,7 @@ export const screenConfig = {
     photoCredit: 'Daniil Silantev / Unsplash',
     screenNumber: 6,
     totalScreens: TOTAL_SCREENS,
+    layoutClassName: 'screen-layout--breathe-intro',
   },
   breatheOrb: {
     backgroundImage: daniilSilantev,

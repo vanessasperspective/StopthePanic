@@ -92,6 +92,14 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(26, 46, 37, 0.48);
 }
 
+.screen-layout--link .screen-layout-overlay {
+  background: rgba(26, 46, 37, 0.48);
+}
+
+.screen-layout--breathe-intro .screen-layout-overlay {
+  background: rgba(26, 46, 37, 0.52);
+}
+
 .screen-layout .navbar {
   position: relative;
   z-index: 1;
@@ -421,6 +429,74 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .listen-body {
+    font-size: 11pt;
+  }
+}
+
+/* ----- Link screen ----- */
+.link-screen {
+  padding: 1.25rem 2rem;
+}
+
+.link-heading {
+  font-size: 38pt;
+}
+
+.link-body {
+  font-size: 13pt;
+}
+
+.link-nav-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .link-screen {
+    padding: 1rem 1.5rem;
+  }
+
+  .link-heading {
+    font-size: 28pt;
+  }
+
+  .link-body {
+    font-size: 11pt;
+  }
+}
+
+/* ----- Breathe Intro screen ----- */
+.breathe-intro-screen {
+  padding: 1.25rem 2rem;
+}
+
+.breathe-intro-heading {
+  font-size: 38pt;
+}
+
+.breathe-intro-body {
+  font-size: 13pt;
+}
+
+.breathe-intro-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .breathe-intro-screen {
+    padding: 1rem 1.5rem;
+  }
+
+  .breathe-intro-heading {
+    font-size: 28pt;
+  }
+
+  .breathe-intro-body {
     font-size: 11pt;
   }
 }
