@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import ScreenLayout from '../components/ScreenLayout';
 import { getScreenConfig } from '../config/screens';
+import { primaryButton, secondaryButton } from '../styles/buttons';
 
 export default function Look() {
   const config = getScreenConfig('look');
@@ -58,35 +59,10 @@ export default function Look() {
 
         {/* Navigation buttons */}
         <div className="look-nav-row">
-          <Link
-            to="/safe"
-            className="font-body"
-            style={{
-              fontWeight: 'bold',
-              color: '#84B59F',
-              backgroundColor: 'white',
-              border: '2px solid #84B59F',
-              borderRadius: '0.5rem',
-              padding: '0.75rem 1.5rem',
-              textDecoration: 'none',
-              display: 'inline-block',
-            }}
-          >
+          <Link to="/safe" style={{ ...secondaryButton, display: 'inline-block' }}>
             ← Back
           </Link>
-          <Link
-            to="/listen"
-            className="font-body"
-            style={{
-              fontWeight: 'bold',
-              color: 'white',
-              backgroundColor: 'var(--color-sage)',
-              borderRadius: '0.5rem',
-              padding: '0.75rem 1.5rem',
-              textDecoration: 'none',
-              display: 'inline-block',
-            }}
-          >
+          <Link to="/listen" style={{ ...primaryButton, display: 'inline-block' }}>
             Next →
           </Link>
         </div>

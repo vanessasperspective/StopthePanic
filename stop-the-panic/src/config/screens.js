@@ -35,6 +35,7 @@ export const screenConfig = {
     photoCredit: 'Tegan Conway / Unsplash',
     screenNumber: 4,
     totalScreens: TOTAL_SCREENS,
+    layoutClassName: 'screen-layout--listen',
   },
   link: {
     backgroundImage: florianSchindler,

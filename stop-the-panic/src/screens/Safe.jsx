@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import ScreenLayout from '../components/ScreenLayout';
 import { getScreenConfig } from '../config/screens';
+import { primaryButton } from '../styles/buttons';
 
 const CARDS = [
   'Your body is protecting you',
@@ -40,19 +41,7 @@ export default function Safe() {
           </div>
         </div>
         <div className="safe-button-row">
-          <Link
-            to="/look"
-            className="font-body"
-            style={{
-              fontWeight: 'bold',
-              color: 'white',
-              backgroundColor: 'var(--color-sage)',
-              borderRadius: '0.5rem',
-              padding: '0.75rem 1.5rem',
-              textDecoration: 'none',
-              display: 'inline-block',
-            }}
-          >
+          <Link to="/look" style={{ ...primaryButton, display: 'inline-block' }}>
             Start →
           </Link>
         </div>

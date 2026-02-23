@@ -88,6 +88,10 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(26, 46, 37, 0.48);
 }
 
+.screen-layout--listen .screen-layout-overlay {
+  background: rgba(26, 46, 37, 0.48);
+}
+
 .screen-layout .navbar {
   position: relative;
   z-index: 1;
@@ -384,5 +388,39 @@ h1, h2, h3, h4, h5, h6 {
 
   .look-btn {
     padding: 0.6rem 1.25rem;
+  }
+}
+
+/* ----- Listen screen ----- */
+.listen-screen {
+  padding: 1.25rem 2rem;
+}
+
+.listen-heading {
+  font-size: 38pt;
+}
+
+.listen-body {
+  font-size: 13pt;
+}
+
+.listen-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .listen-screen {
+    padding: 1rem 1.5rem;
+  }
+
+  .listen-heading {
+    font-size: 28pt;
+  }
+
+  .listen-body {
+    font-size: 11pt;
   }
 }
