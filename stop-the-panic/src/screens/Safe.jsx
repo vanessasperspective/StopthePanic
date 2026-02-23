@@ -14,7 +14,7 @@ export default function Safe() {
   return (
     <ScreenLayout {...config}>
       <div style={{ display: 'flex', flex: 1, flexDirection: 'column', minHeight: 0, width: '100%' }}>
-        <div style={{ display: 'flex', flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+        <div style={{ display: 'flex', flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', paddingTop: '3rem' }}>
           <h1 className="font-heading safe-heading" style={{ fontWeight: 'bold', color: 'white', lineHeight: 1.2 }}>
             You are safe.
           </h1>
