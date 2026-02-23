@@ -71,7 +71,7 @@ export default function BreatheIntro() {
             to="/god-menu"
             style={{
               color: '#84B59F',
-              fontSize: '8.5pt',
+              fontSize: '0.75rem',
               fontStyle: 'italic',
               fontFamily: 'Inter, system-ui, sans-serif',
               textDecoration: 'none',

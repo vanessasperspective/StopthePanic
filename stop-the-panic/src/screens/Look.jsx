@@ -19,7 +19,7 @@ export default function Look() {
               color: 'white',
               fontFamily: 'var(--font-body)',
               fontWeight: 'bold',
-              fontSize: '8.5pt',
+              fontSize: '0.75rem',
               padding: '0.3rem 0.75rem',
               borderRadius: '4px',
             }}
@@ -32,7 +32,7 @@ export default function Look() {
               color: 'white',
               fontFamily: 'var(--font-body)',
               fontWeight: 'bold',
-              fontSize: '8pt',
+              fontSize: '0.7rem',
               padding: '0.4rem 0.9rem',
               borderRadius: '4px',
             }}

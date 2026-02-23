@@ -281,7 +281,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-crisis-link {
   color: var(--color-sage);
-  font-size: 6.5pt;
+  font-size: 0.6rem;
   font-style: italic;
   text-decoration: none;
 }
@@ -312,12 +312,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ----- Safe screen ----- */
 .safe-heading {
-  font-size: 42pt;
+  font-size: 2.8rem;
 }
 
 .safe-subcopy {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .safe-button-row {
@@ -333,11 +335,11 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 640px) {
   .safe-heading {
-    font-size: 30pt;
+    font-size: 1.9rem;
   }
 
   .safe-subcopy {
-    font-size: 13pt;
+    font-size: 0.95rem;
   }
 
   .safe-button-row {
@@ -357,11 +359,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .look-heading {
-  font-size: 38pt;
+  font-size: 2.8rem;
 }
 
 .look-body {
-  font-size: 13pt;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .look-nav-row {
@@ -387,11 +390,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .look-heading {
-    font-size: 28pt;
+    font-size: 1.9rem;
   }
 
   .look-body {
-    font-size: 11pt;
+    font-size: 0.95rem;
   }
 
   .look-btn {
@@ -405,11 +408,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .listen-heading {
-  font-size: 38pt;
+  font-size: 2.8rem;
 }
 
 .listen-body {
-  font-size: 13pt;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .listen-nav-row {
@@ -425,11 +429,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .listen-heading {
-    font-size: 28pt;
+    font-size: 1.9rem;
   }
 
   .listen-body {
-    font-size: 11pt;
+    font-size: 0.95rem;
   }
 }
 
@@ -439,11 +443,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .link-heading {
-  font-size: 38pt;
+  font-size: 2.8rem;
 }
 
 .link-body {
-  font-size: 13pt;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .link-nav-row {
@@ -459,11 +464,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .link-heading {
-    font-size: 28pt;
+    font-size: 1.9rem;
   }
 
   .link-body {
-    font-size: 11pt;
+    font-size: 0.95rem;
   }
 }
 
@@ -473,11 +478,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .breathe-intro-heading {
-  font-size: 38pt;
+  font-size: 2.8rem;
 }
 
 .breathe-intro-body {
-  font-size: 13pt;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .breathe-intro-nav-row {
@@ -493,10 +499,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .breathe-intro-heading {
-    font-size: 28pt;
+    font-size: 1.9rem;
   }
 
   .breathe-intro-body {
-    font-size: 11pt;
+    font-size: 0.95rem;
   }
 }

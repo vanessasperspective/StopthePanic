@@ -29,7 +29,7 @@ export default function Safe() {
                 style={{
                   backgroundColor: 'rgba(26, 46, 37, 0.55)',
                   color: 'var(--color-accent-mint, #C8E6D4)',
-                  fontSize: '11pt',
+                  fontSize: '0.95rem',
                   textAlign: 'center',
                   borderRadius: '0.5rem',
                   padding: '1rem 1.5rem',

@@ -19,7 +19,7 @@ export default function Listen() {
               color: 'white',
               fontFamily: 'Inter, system-ui, sans-serif',
               fontWeight: 700,
-              fontSize: '8.5pt',
+              fontSize: '0.75rem',
               padding: '0.3rem 0.75rem',
               borderRadius: '4px',
               display: 'inline-block',
