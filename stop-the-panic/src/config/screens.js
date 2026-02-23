@@ -65,6 +65,7 @@ export const screenConfig = {
     photoCredit: 'Hanna Lazar / Unsplash',
     screenNumber: 8,
     totalScreens: TOTAL_SCREENS,
+    layoutClassName: 'screen-layout--ground',
   },
   bodyScan: {
     backgroundImage: jonathanBorba,
@@ -72,6 +73,7 @@ export const screenConfig = {
     photoCredit: 'Jonathan Borba / Unsplash',
     screenNumber: 9,
     totalScreens: TOTAL_SCREENS,
+    layoutClassName: 'screen-layout--body-scan',
   },
   visualise: {
     backgroundImage: stanJacobs,
@@ -79,6 +81,7 @@ export const screenConfig = {
     photoCredit: 'Stan Jacobs / Unsplash',
     screenNumber: 10,
     totalScreens: TOTAL_SCREENS,
+    layoutClassName: 'screen-layout--visualise',
   },
   act: {
     backgroundImage: polinaKuzovkova,

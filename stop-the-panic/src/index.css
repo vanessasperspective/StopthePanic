@@ -519,3 +519,146 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.95rem;
   }
 }
+
+/* ----- Ground screen ----- */
+.screen-layout--ground .screen-layout-overlay {
+  background: transparent;
+}
+
+.ground-columns {
+  flex: 1;
+  display: flex;
+  gap: 4px;
+  min-height: 0;
+  margin-bottom: 0.75rem;
+  scrollbar-width: none;
+}
+
+.ground-columns::-webkit-scrollbar {
+  display: none;
+}
+
+.ground-column {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+  padding: 1.5rem 0.4rem 1rem;
+  scroll-snap-align: start;
+}
+
+.ground-swipe-dots {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .ground-columns {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ground-column {
+    min-width: 80vw;
+    flex-shrink: 0;
+  }
+
+  .ground-swipe-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+  }
+}
+
+/* ----- Body Scan screen ----- */
+.screen-layout--body-scan .screen-layout-overlay {
+  background: rgba(30, 24, 48, 0.52);
+}
+
+.body-scan-screen {
+  padding: 1.25rem 2rem;
+}
+
+.body-scan-heading {
+  font-size: 2.8rem;
+}
+
+.body-scan-body {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.body-scan-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .body-scan-screen {
+    padding: 1rem 1.5rem;
+  }
+
+  .body-scan-heading {
+    font-size: 1.9rem;
+  }
+
+  .body-scan-body {
+    font-size: 0.95rem;
+  }
+}
+
+/* ----- Visualise screen ----- */
+.screen-layout--visualise .screen-layout-overlay {
+  background: rgba(26, 46, 37, 0.44);
+}
+
+.visualise-screen {
+  padding: 1.25rem 2rem;
+}
+
+.visualise-heading {
+  font-size: 2.8rem;
+}
+
+.visualise-body {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.visualise-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .visualise-screen {
+    padding: 1rem 1.5rem;
+  }
+
+  .visualise-heading {
+    font-size: 1.9rem;
+  }
+
+  .visualise-body {
+    font-size: 0.95rem;
+  }
+}
+
+/* ----- Visualise timer animations ----- */
+@keyframes timer-drain {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: 376.99; }
+}
+
+@keyframes next-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}

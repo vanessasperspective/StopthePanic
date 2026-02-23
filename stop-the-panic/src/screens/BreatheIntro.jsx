@@ -3,8 +3,6 @@ import ScreenLayout from '../components/ScreenLayout';
 import { getScreenConfig } from '../config/screens';
 import { primaryButton, secondaryButton } from '../styles/buttons';
 
-const DOTS = [1, 2, 3, 4, 5, 6, 7];
-
 export default function BreatheIntro() {
   const config = getScreenConfig('breatheIntro');
   return (
@@ -13,42 +11,6 @@ export default function BreatheIntro() {
         className="breathe-intro-screen"
         style={{ display: 'flex', flex: 1, flexDirection: 'column', width: '100%' }}
       >
-        {/* Progress dots */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '0.5rem',
-            marginBottom: '2rem',
-          }}
-        >
-          {DOTS.map((i) =>
-            i === 1 ? (
-              <div
-                key={i}
-                style={{
-                  width: '12px',
-                  height: '12px',
-                  borderRadius: '50%',
-                  backgroundColor: '#84B59F',
-                }}
-              />
-            ) : (
-              <div
-                key={i}
-                style={{
-                  width: '8px',
-                  height: '8px',
-                  borderRadius: '50%',
-                  backgroundColor: 'transparent',
-                  border: '2px solid white',
-                }}
-              />
-            )
-          )}
-        </div>
-
         {/* Hero content */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <h1

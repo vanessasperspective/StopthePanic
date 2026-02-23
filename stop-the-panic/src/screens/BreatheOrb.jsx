@@ -4,8 +4,6 @@ import ScreenLayout from '../components/ScreenLayout';
 import { getScreenConfig } from '../config/screens';
 import { primaryButton, secondaryButton } from '../styles/buttons';
 
-const DOTS = [1, 2, 3, 4, 5, 6, 7];
-
 const PATTERNS = [
   { id: 'box',  label: 'Box (4-4-4-4)',      description: 'Inhale 4 · Hold 4 · Exhale 4 · Hold 4' },
   { id: '478',  label: '4-7-8',              description: 'Inhale 4 · Hold 7 · Exhale 8' },
@@ -14,10 +12,10 @@ const PATTERNS = [
 
 // Box breathing: 4-4-4-4
 const BOX_PHASES = [
-  { name: 'inhale',      duration: 4000, scale: 1.28, pulse: false, label: 'Inhale...' },
-  { name: 'hold-top',    duration: 4000, scale: 1.28, pulse: true,  label: 'Hold...'   },
-  { name: 'exhale',      duration: 4000, scale: 1.0,  pulse: false, label: 'Exhale...' },
-  { name: 'hold-bottom', duration: 4000, scale: 1.0,  pulse: true,  label: 'Hold...'   },
+  { name: 'inhale',      duration: 4000, scale: 1.28, pulse: false, label: 'Inhale...', instruction: 'Breathe in for 4 seconds'  },
+  { name: 'hold-top',    duration: 4000, scale: 1.28, pulse: true,  label: 'Hold...',   instruction: 'Hold for 4 seconds'         },
+  { name: 'exhale',      duration: 4000, scale: 1.0,  pulse: false, label: 'Exhale...', instruction: 'Breathe out for 4 seconds' },
+  { name: 'hold-bottom', duration: 4000, scale: 1.0,  pulse: true,  label: 'Hold...',   instruction: 'Hold for 4 seconds'         },
 ];
 
 // Colours outside → inside; sizes as % of container
@@ -34,7 +32,6 @@ const ORB_LAYERS = [
 export default function BreatheOrb() {
   const config = getScreenConfig('breatheOrb');
   const [activePattern, setActivePattern] = useState('box');
-  const pattern = PATTERNS.find((p) => p.id === activePattern);
 
   // Animation state
   const [phaseIdx, setPhaseIdx] = useState(0);
@@ -86,56 +83,20 @@ export default function BreatheOrb() {
           padding: '1.25rem 2rem',
         }}
       >
-        {/* Progress dots */}
-        <div
+        {/* Instruction heading */}
+        <p
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '0.5rem',
-            marginBottom: '1.5rem',
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontWeight: 700,
+            fontSize: '1.3rem',
+            color: 'white',
+            textAlign: 'left',
+            paddingLeft: '0.5rem',
+            margin: '0 0 1.75rem',
           }}
         >
-          {DOTS.map((i) =>
-            i === 1 ? (
-              <div key={i} style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#84B59F' }} />
-            ) : (
-              <div key={i} style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'transparent', border: '2px solid white' }} />
-            )
-          )}
-        </div>
-
-        {/* Pattern tabs */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '0.5rem',
-            marginBottom: '2rem',
-            flexWrap: 'wrap',
-          }}
-        >
-          {PATTERNS.map((p) => (
-            <button
-              key={p.id}
-              type="button"
-              onClick={() => setActivePattern(p.id)}
-              style={{
-                backgroundColor: activePattern === p.id ? '#5C4F8A' : '#352855',
-                color: activePattern === p.id ? 'white' : '#9B8EC4',
-                fontFamily: 'Inter, system-ui, sans-serif',
-                fontWeight: activePattern === p.id ? 700 : 400,
-                fontSize: '0.85rem',
-                padding: '0.4rem 0.9rem',
-                borderRadius: '4px',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-            >
-              {p.label}
-            </button>
-          ))}
-        </div>
+          Breathe with the orb
+        </p>
 
         {/* Orb + description */}
         <div
@@ -145,7 +106,6 @@ export default function BreatheOrb() {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '1.5rem',
           }}
         >
           {/* Animated orb — scales as one unit */}
@@ -204,19 +164,21 @@ export default function BreatheOrb() {
             </div>
           </div>
 
-          {/* Breathing pattern description */}
-          <p
-            style={{
-              color: '#9B8EC4',
-              fontSize: '0.9rem',
-              fontFamily: 'Inter, system-ui, sans-serif',
-              textAlign: 'center',
-              margin: 0,
-            }}
-          >
-            {pattern.description}
-          </p>
         </div>
+
+        {/* Phase instruction — below orb with guaranteed clearance from expanded scale */}
+        <p
+          style={{
+            color: '#9B8EC4',
+            fontSize: '0.9rem',
+            fontFamily: 'Inter, system-ui, sans-serif',
+            textAlign: 'center',
+            margin: '0 0 1rem',
+            paddingTop: '3rem',
+          }}
+        >
+          {currentPhase.instruction}
+        </p>
 
         {/* Escape link */}
         <div style={{ textAlign: 'center', paddingBottom: '1rem' }}>
