@@ -1,7 +1,7 @@
 import { Link as RouterLink } from 'react-router-dom';
 import ScreenLayout from '../components/ScreenLayout';
 import { getScreenConfig } from '../config/screens';
-import { primaryButton } from '../styles/buttons';
+import { primaryButton, secondaryButton } from '../styles/buttons';
 
 export default function Link() {
   const config = getScreenConfig('link');
@@ -45,13 +45,13 @@ export default function Link() {
           </p>
         </div>
 
-        {/* Single forward button, bottom left */}
+        {/* Navigation buttons */}
         <div className="link-nav-row">
-          <RouterLink
-            to="/breathe-intro"
-            style={{ ...primaryButton, padding: '0.875rem 3rem', display: 'inline-block' }}
-          >
-            Let's begin →
+          <RouterLink to="/listen" style={{ ...secondaryButton, display: 'inline-block' }}>
+            ← Back
+          </RouterLink>
+          <RouterLink to="/breathe-intro" style={{ ...primaryButton, display: 'inline-block' }}>
+            Next →
           </RouterLink>
         </div>
       </div>
