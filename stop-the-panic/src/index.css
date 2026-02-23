@@ -100,6 +100,14 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(26, 46, 37, 0.52);
 }
 
+.screen-layout--breathe-orb {
+  background-color: #1E1830;
+}
+
+.screen-layout--breathe-orb .screen-layout-overlay {
+  background: transparent;
+}
+
 .screen-layout .navbar {
   position: relative;
   z-index: 1;

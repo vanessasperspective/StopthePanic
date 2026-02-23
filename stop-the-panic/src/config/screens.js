@@ -54,11 +54,10 @@ export const screenConfig = {
     layoutClassName: 'screen-layout--breathe-intro',
   },
   breatheOrb: {
-    backgroundImage: daniilSilantev,
     screenName: 'Breathe Orb',
-    photoCredit: 'Daniil Silantev / Unsplash',
     screenNumber: 6,
     totalScreens: TOTAL_SCREENS,
+    layoutClassName: 'screen-layout--breathe-orb',
   },
   ground: {
     backgroundImage: hannaLazar,
