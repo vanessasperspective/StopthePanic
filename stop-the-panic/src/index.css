@@ -108,6 +108,11 @@ h1, h2, h3, h4, h5, h6 {
   background: transparent;
 }
 
+@keyframes orb-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.8; }
+}
+
 .screen-layout .navbar {
   position: relative;
   z-index: 1;
